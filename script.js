@@ -65,7 +65,7 @@ function reiniciarJogo(){
 
     nuvem.style.animation = "nuvem 20s infinite linear";
     nuvem.style.left = `${posicaoNuvem}px`;
-    setInterval(0);
+    loopJogo = setInterval(verificarColisoes, 10);
 }
 
 document.addEventListener("keyup", fazerMarioPular);
