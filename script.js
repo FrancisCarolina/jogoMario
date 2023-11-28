@@ -55,25 +55,7 @@ function verificarColisoes() {
 // ...
 
 function reiniciarJogo() {
-  pontuacao = 0;
-  atualizaPontuacao();
-
-  cano.style.animation = "animacoes-cano 1.5s infinite linear";
-  mario.style.animation = "none";
-  nuvem.style.animation = "nuvem 20s infinite linear";
-
-  mario.src = "./assets/imgs/mario.gif";
-  mario.style.width = "130px";
-  mario.style.marginLeft = "0";
-  mario.style.bottom = "0px";
-
-  cano.style.left = "100%";
-
-  nuvem.style.left = "0";
-
-  fimDeJogo.style.visibility = "hidden";
-
-  loopJogo = setInterval(verificarColisoes, 10);
+  location.reload();
 }
 
 document.addEventListener("keyup", fazerMarioPular);
