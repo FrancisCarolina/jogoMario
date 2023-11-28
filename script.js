@@ -3,11 +3,12 @@ const cano = document.querySelector(".cano");
 const nuvem = document.querySelector(".nuvem");
 const fimDeJogo = document.querySelector(".fim-de-jogo");
 const botaoReiniciar = document.querySelector(".reiniciar");
+const pontos = document.querySelector(".pontos");
 
 let pontuacao = 0;
 
 function atualizaPontuacao() {
-  console.log("Pontuação: ", pontuacao);
+  pontos.innerHTML = "Pontuação: " + pontuacao;
 }
 
 let loopJogo = setInterval(verificarColisoes, 10);
@@ -56,6 +57,7 @@ function verificarColisoes() {
 
 function reiniciarJogo() {
   location.reload();
+  atualizaPontuacao();
 }
 
 document.addEventListener("keyup", fazerMarioPular);
