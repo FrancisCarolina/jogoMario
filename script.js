@@ -27,6 +27,22 @@ function fazerMarioPular() {
   }, 500);
 }
 
+function setarEstiloCanoColisao(posicaoCano){
+  cano.style.animation = "none";
+  cano.style.left = `${posicaoCano}px`;
+}
+function setarEstiloMarioColisao(posicaoMario){
+  mario.style.animation = "none";
+  mario.style.bottom = `${posicaoMario}px`;
+  mario.src = "assets/imgs/fim-de-jogo.png";
+  mario.style.width = "70px";
+  mario.style.marginLeft = "35px";
+}
+function setarEstiloNuvemColisao(posicaoNuvem){
+  nuvem.style.animation = "nuvem 20s infinite linear";
+  nuvem.style.left = `${posicaoNuvem}px`;
+}
+
 function verificarColisoes() {
   const posicaoCano = cano.offsetLeft;
   const posicaoMario = parseFloat(getComputedStyle(mario).bottom);
@@ -37,17 +53,9 @@ function verificarColisoes() {
     pontuacao = 0;
     pararJogo();
 
-    cano.style.animation = "none";
-    cano.style.left = `${posicaoCano}px`;
-
-    mario.style.animation = "none";
-    mario.style.bottom = `${posicaoMario}px`;
-    mario.src = "assets/imgs/fim-de-jogo.png";
-    mario.style.width = "70px";
-    mario.style.marginLeft = "35px";
-
-    nuvem.style.animation = "nuvem 20s infinite linear";
-    nuvem.style.left = `${posicaoNuvem}px`;
+    setarEstiloCanoColisao(posicaoCano);
+    setarEstiloMarioColisao(posicaoMario);
+    setarEstiloNuvemColisao(posicaoNuvem);
 
     fimDeJogo.style.visibility = "visible";
   }
